@@ -708,20 +708,7 @@
                 initCharts();
             }, 500);
         }
-// --- FITUR AUTO-LOGOUT & RESET FORM SAAT REFRESH ---
-        window.addEventListener('load', function() {
-            // Memastikan tampilan terkunci di halaman login
-            const loginPage = document.getElementById('login-page');
-            const appContainer = document.getElementById('app-container');
-            
-            loginPage.style.display = 'flex';
-            loginPage.style.opacity = '1';
-            appContainer.style.display = 'none';
 
-            // Mengosongkan form inputan agar tidak ada jejak cache password di browser
-            document.getElementById('login-user').value = '';
-            document.getElementById('login-pass').value = '';
-        });
         // Logout
         function handleLogout() {
             if (confirm("Matikan terminal keamanan OS?")) location.reload();
