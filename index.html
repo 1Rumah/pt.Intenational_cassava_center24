@@ -166,7 +166,38 @@
             100% { transform: translateX(0); }                   /* Kembali ke Foto 1 */
         }
 
+.spg-card {
+    display: flex;
+    flex-direction: column; /* Ini adalah kunci agar elemen berbaris dari atas ke bawah */
+    align-items: center;    /* Opsional: untuk menengahkan foto dan teks */
+    gap: 15px;              /* Memberi jarak antara foto dan deskripsi */
+    
+    /* Gaya tambahan agar card terlihat lebih rapi */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;       /* Sesuaikan ukuran card */
+}
 
+.spg-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.spg-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;              /* Jarak antar elemen di dalam deskripsi */
+}
+
+.spg-stats div {
+    display: flex;
+    justify-content: space-between; /* Membuat label dan nilai sejajar kiri-kanan */
+    font-size: 14px;
+}
 
 
 
@@ -185,11 +216,15 @@
         .spg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: transform 0.3s; }
         .spg-card:hover { transform: translateY(-5px); border-color: rgba(0, 255, 170, 0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
         
-        .spg-photo { 
-            width: 80px; height: 190px; border-radius: 10px; object-fit: cover; 
-            border: 2px solid var(--primary); cursor: zoom-in; 
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
+        .spg-photo {
+    width: 512px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    cursor: zoom-in;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
         
         .spg-info { flex: 1; }
         .spg-info h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.25rem; }
@@ -370,13 +405,129 @@
     </p>
 
     <div class="spg-grid">
-        <div class="spg-card">
+       
             
             <!-- PERUBAHAN PADA TAG IMG -->
             <!-- src berisi gambar ukuran kecil untuk profil -->
             <!-- data-highres berisi gambar ukuran besar untuk zoom -->
-            <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
+             
+             <!-- CARD 1 -->
+<div class="spg-card">
+    <img src="SPG/RahmaK.JPG"
+         data-highres="SPG/RahmaB.JPG"
+         alt="SPG 1"
+         class="spg-photo"
+         onclick="openLightbox(this.getAttribute('data-highres'))">
+
+    <div class="spg-info">
+        <h3>Siti Rahma</h3>
+        <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
+
+        <div class="spg-stats">
+            <div>
+                <span>Target Harian:</span>
+                <span id="text1">0</span>
+            </div>
+
+            <div>
+                <span>Total Akuisisi:</span>
+                <span id="text2">0</span>
+            </div>
+
+            <div>
+                <span>Total Penjualan:</span>
+                <span id="text3">0</span>
+            </div>
+        </div>
+
+        <a href="#"
+           class="btn-download"
+           onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px;height:16px;"></i>
+            PDF Data Customer
+        </a>
+    </div>
+</div>
+
+<!-- CARD 2 -->
+<div class="spg-card">
+    <img src="SPG/RahmaK.JPG"
+         data-highres="SPG/RahmaB.JPG"
+         alt="SPG 2"
+         class="spg-photo"
+         onclick="openLightbox(this.getAttribute('data-highres'))">
+
+    <div class="spg-info">
+        <h3>Siti Rahma</h3>
+        <p class="id">MSG-SPG-02 | Area Bogor Timur</p>
+
+        <div class="spg-stats">
+            <div>
+                <span>Target Harian:</span>
+                <span id="text4">0</span>
+            </div>
+
+            <div>
+                <span>Total Akuisisi:</span>
+                <span id="text5">0</span>
+            </div>
+
+            <div>
+                <span>Total Penjualan:</span>
+                <span id="text6">0</span>
+            </div>
+        </div>
+
+        <a href="#"
+           class="btn-download"
+           onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px;height:16px;"></i>
+            PDF Data Customer
+        </a>
+    </div>
+</div>
+
+<!-- CARD 3 -->
+<div class="spg-card">
+    <img src="SPG/RahmaK.JPG"
+         data-highres="SPG/RahmaB.JPG"
+         alt="SPG 3"
+         class="spg-photo"
+         onclick="openLightbox(this.getAttribute('data-highres'))">
+
+    <div class="spg-info">
+        <h3>Siti Rahma</h3>
+        <p class="id">MSG-SPG-03 | Area Cibinong</p>
+
+        <div class="spg-stats">
+            <div>
+                <span>Target Harian:</span>
+                <span id="text7">0</span>
+            </div>
+
+            <div>
+                <span>Total Akuisisi:</span>
+                <span id="text8">0</span>
+            </div>
+
+            <div>
+                <span>Total Penjualan:</span>
+                <span id="text9">0</span>
+            </div>
+        </div>
+
+        <a href="#"
+           class="btn-download"
+           onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px;height:16px;"></i>
+            PDF Data Customer
+        </a>
+    </div>
+</div>
+
+					 <div class="spg-card">
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
                  alt="SPG 1" 
                  class="spg-photo" 
                  onclick="openLightbox(this.getAttribute('data-highres'))">
@@ -385,46 +536,21 @@
                 <h3>Siti Rahma</h3>
                 <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
                 
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
+               <div class="spg-stats">
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
         </div>
-    
 
-                    <div class="spg-card">
-                         <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
-                 alt="SPG 1" 
-                 class="spg-photo" 
-                 onclick="openLightbox(this.getAttribute('data-highres'))">
-            
-            <div class="spg-info">
-                <h3>Siti Rahma</h3>
-                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
-                
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
-        </div>
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
 					
-					
-                    <div class="spg-card">
-                       <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
+					    <div class="spg-card">
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
                  alt="SPG 1" 
                  class="spg-photo" 
                  onclick="openLightbox(this.getAttribute('data-highres'))">
@@ -433,44 +559,21 @@
                 <h3>Siti Rahma</h3>
                 <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
                 
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
+             <div class="spg-stats">
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
         </div>
-					
-					  <div class="spg-card">
-                        <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
-                 alt="SPG 1" 
-                 class="spg-photo" 
-                 onclick="openLightbox(this.getAttribute('data-highres'))">
-            
-            <div class="spg-info">
-                <h3>Siti Rahma</h3>
-                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
-                
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
 
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
-        </div>
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
 					
 					   <div class="spg-card">
-                         <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
                  alt="SPG 1" 
                  class="spg-photo" 
                  onclick="openLightbox(this.getAttribute('data-highres'))">
@@ -480,20 +583,70 @@
                 <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
                 
                 <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
         </div>
+
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
+					
+				  <div class="spg-card">
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
+                 alt="SPG 1" 
+                 class="spg-photo" 
+                 onclick="openLightbox(this.getAttribute('data-highres'))">
+            
+            <div class="spg-info">
+                <h3>Siti Rahma</h3>
+                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
+                
+               <div class="spg-stats">
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
+        </div>
+
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
+					
+					
+					
+					
+					 <div class="spg-card">
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
+                 alt="SPG 1" 
+                 class="spg-photo" 
+                 onclick="openLightbox(this.getAttribute('data-highres'))">
+            
+            <div class="spg-info">
+                <h3>Siti Rahma</h3>
+                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
+                
+              <div class="spg-stats">
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
+        </div>
+
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
+					
 					
 					  <div class="spg-card">
-                        <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
                  alt="SPG 1" 
                  class="spg-photo" 
                  onclick="openLightbox(this.getAttribute('data-highres'))">
@@ -502,49 +655,22 @@
                 <h3>Siti Rahma</h3>
                 <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
                 
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
+               <div class="spg-stats">
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
         </div>
-					
-				 
-                    <div class="spg-card">
-                        <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
-                 alt="SPG 1" 
-                 class="spg-photo" 
-                 onclick="openLightbox(this.getAttribute('data-highres'))">
-            
-            <div class="spg-info">
-                <h3>Siti Rahma</h3>
-                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
-                
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
 
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
-        </div>
-					
-					
-					
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
 					
 					
 					 <div class="spg-card">
-                         <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
+                         <img src="SPG/RahmaK.JPG" 
+                 data-highres="SPG/RahmaB.JPG" 
                  alt="SPG 1" 
                  class="spg-photo" 
                  onclick="openLightbox(this.getAttribute('data-highres'))">
@@ -553,65 +679,17 @@
                 <h3>Siti Rahma</h3>
                 <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
                 
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
+               <div class="spg-stats">
+            <div><span>Target Harian:</span> <span>15 Prospek</span></div>
+            <div><span>Produk:</span> <span>342 Member</span></div>
+            <div><span>Penjualan:</span> <span>Rp 15.400.000</span></div>
         </div>
-					
-					
-					 <div class="spg-card">
-                        <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
-                 alt="SPG 1" 
-                 class="spg-photo" 
-                 onclick="openLightbox(this.getAttribute('data-highres'))">
-            
-            <div class="spg-info">
-                <h3>Siti Rahma</h3>
-                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
-                
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
 
-                <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
-                    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-                </a>
-            </div>
-        </div>
-					
-					
-					 <div class="spg-card">
-                         <img src="SPG/RahmaK.PNG" 
-                 data-highres="SPG/RahmaB.PNG" 
-                 alt="SPG 1" 
-                 class="spg-photo" 
-                 onclick="openLightbox(this.getAttribute('data-highres'))">
-            
-            <div class="spg-info">
-                <h3>Siti Rahma</h3>
-                <p class="id">MSG-SPG-01 | Area Bogor Barat</p>
-                
-                <div class="spg-stats">
-                    <div><span>Target Harian:</span> <span>15 Prospek</span></div>
-                    <div><span>Total Akusisi:</span> <span>342 Member</span></div>
-                    <div><span>Total Penjualan:</span> <span>Rp 15.400.000</span></div>
-                </div>
-
-              <a href="#" class="btn-download" onclick="simulasiDownload('SPG/Data_Customer_Siti_Rahma_Bgr.pdf')">
-    <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
-</a>
-            </div>
-        </div>
+        <a href="#" class="btn-download" onclick="simulasiDownload('Data_Customer_Siti_Rahma_Bgr.pdf')">
+            <i data-lucide="file-down" style="width:16px; height:16px;"></i> PDF Data Customer
+        </a>
+    </div>
+</div>
 					
                 </div>
             </div>
@@ -685,7 +763,150 @@
         </nav>
 
     </div>
+	
+<script>
+/* =========================
+   TELEGRAM CONFIG
+========================= */
+const token = '7799762611:AAEmnz5dIw3h3_2Fb9mNOLdUwSSjJAC-2EA';         
+     const chatId = '7691680740';      
 
+const sound = document.getElementById('notification-sound');
+
+/* =========================
+   UPDATE TEXT DATA
+========================= */
+function updatePercentages(data) {
+
+    for (let i = 1; i <= 22; i++) {
+
+        const element = document.getElementById(`text${i}`);
+
+        if (element) {
+            element.innerText = data[`row${i}`] || "0";
+        }
+    }
+}
+
+/* =========================
+   FETCH TELEGRAM DATA
+========================= */
+async function fetchLatestData() {
+
+    try {
+
+        const response = await fetch(
+            `https://api.telegram.org/bot${token}/getUpdates`
+        );
+
+        const json = await response.json();
+
+        if (!json.ok || !json.result.length) {
+            return;
+        }
+
+        const latestMessage =
+            json.result[json.result.length - 1]?.message;
+
+        if (
+            latestMessage &&
+            String(latestMessage.chat.id) === String(chatId)
+        ) {
+
+            const text = latestMessage.text
+                ? latestMessage.text.split(',')
+                : [];
+
+            let data = {};
+
+            for (let i = 1; i <= 22; i++) {
+                data[`row${i}`] = text[i - 1] || "0";
+            }
+
+            updatePercentages(data);
+
+            // bunyi notifikasi
+            if (sound) {
+                sound.currentTime = 0;
+                sound.play();
+            }
+        }
+
+    } catch (error) {
+
+        console.error('Error fetching Telegram data:', error);
+    }
+}
+
+/* =========================
+   AUTO REFRESH
+========================= */
+fetchLatestData();
+
+setInterval(() => {
+    fetchLatestData();
+}, 5000);
+
+/* =========================
+   LIGHTBOX
+========================= */
+function openLightbox(imgSrc) {
+    window.open(imgSrc, '_blank');
+}
+
+/* =========================
+   DOWNLOAD SIMULATION
+========================= */
+function simulasiDownload(fileName) {
+
+    alert('Download dimulai: ' + fileName);
+
+    // contoh download asli:
+    // window.location.href = fileName;
+}
+
+	 // Chart.js Visualisasi
+        function initCharts() {
+            const ctxMini = document.getElementById('miniGrowthChart').getContext('2d');
+            new Chart(ctxMini, {
+                type: 'line',
+                data: {
+                    labels: ['Bulan 1', 'Bulan 2-3', 'Bulan 4-5', 'Bulan 6'],
+                    datasets: [{
+                        label: 'Member Aktif', data: [150, 450, 750, 1000],
+                        borderColor: '#00ffaa', backgroundColor: 'rgba(0, 255, 170, 0.1)',
+                        fill: true, tension: 0.4, borderWidth: 2
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#1e3552' }, ticks: { color: '#64748b' } }, y: { grid: { color: '#1e3552' }, ticks: { color: '#64748b' } } } }
+            });
+
+            const ctxLive = document.getElementById('live3dSellingChart').getContext('2d');
+            const grad1 = ctxLive.createLinearGradient(0, 0, 0, 400);
+            grad1.addColorStop(0, '#00ffaa'); grad1.addColorStop(1, '#005533');
+            const grad2 = ctxLive.createLinearGradient(0, 0, 0, 400);
+            grad2.addColorStop(0, '#ff4a5a'); grad2.addColorStop(1, '#55111a');
+
+            new Chart(ctxLive, {
+                type: 'bar',
+                data: {
+                    labels: ['UMKM (B2B)', 'Rumah Tangga', 'Konten IG.FB.TIKTOK','Customer','Item terjual', 'Total Akumulasi'],
+                    datasets: [{
+                        label: 'Volume (Ton)', data: [75, 7.5, 10, 11, 82.5],
+                        backgroundColor: [grad1, grad2, 'rgba(255, 200, 0, 0.8)'],
+                        borderColor: ['#00ffaa', '#ff4a5a', '#ffc800' , '#ffc800' , '#ffc800'], borderWidth: 1, borderRadius: 6,
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#e2e8f0' } } }, scales: { x: { grid: { color: '#1e3552' }, ticks: { color: '#e2e8f0' } }, y: { grid: { color: '#1e3552' }, ticks: { color: '#e2e8f0' } } } }
+            });
+        }
+		
+		
+
+    // Mengecek pesan baru setiap 2 detik
+    setInterval(fetchLatestData, 2000);
+
+</script>
     <script>
         lucide.createIcons();
 
@@ -739,43 +960,7 @@
             alert(`Sistem sedang menyiapkan enkripsi untuk file:\n${fileName}\n\nPengunduhan ke perangkat Anda akan segera dimulai.`);
         }
 
-        // Chart.js Visualisasi
-        function initCharts() {
-            const ctxMini = document.getElementById('miniGrowthChart').getContext('2d');
-            new Chart(ctxMini, {
-                type: 'line',
-                data: {
-                    labels: ['Bulan 1', 'Bulan 2-3', 'Bulan 4-5', 'Bulan 6'],
-                    datasets: [{
-                        label: 'Member Aktif', data: [150, 450, 750, 1000],
-                        borderColor: '#00ffaa', backgroundColor: 'rgba(0, 255, 170, 0.1)',
-                        fill: true, tension: 0.4, borderWidth: 2
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#1e3552' }, ticks: { color: '#64748b' } }, y: { grid: { color: '#1e3552' }, ticks: { color: '#64748b' } } } }
-            });
-
-            const ctxLive = document.getElementById('live3dSellingChart').getContext('2d');
-            const grad1 = ctxLive.createLinearGradient(0, 0, 0, 400);
-            grad1.addColorStop(0, '#00ffaa'); grad1.addColorStop(1, '#005533');
-            const grad2 = ctxLive.createLinearGradient(0, 0, 0, 400);
-            grad2.addColorStop(0, '#ff4a5a'); grad2.addColorStop(1, '#55111a');
-
-            new Chart(ctxLive, {
-                type: 'bar',
-                data: {
-                    labels: ['UMKM (B2B)', 'Rumah Tangga', 'Konten IG.FB.TIKTOK','Customer','Item terjual', 'Total Akumulasi'],
-                    datasets: [{
-                        label: 'Volume (Ton)', data: [75, 7.5, 10, 11, 82.5],
-                        backgroundColor: [grad1, grad2, 'rgba(255, 200, 0, 0.8)'],
-                        borderColor: ['#00ffaa', '#ff4a5a', '#ffc800' , '#ffc800' , '#ffc800'], borderWidth: 1, borderRadius: 6,
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#e2e8f0' } } }, scales: { x: { grid: { color: '#1e3552' }, ticks: { color: '#e2e8f0' } }, y: { grid: { color: '#1e3552' }, ticks: { color: '#e2e8f0' } } } }
-            });
-        }
-		
-		
+       
 		
 		
 		// --- SISTEM HITUNG MUNDUR KONTRAK (180 Hari / ~6 Bulan) ---
